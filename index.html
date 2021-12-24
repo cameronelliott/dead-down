@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Marked in the browser</title>
+  <link rel="stylesheet" href="/dead-down/fstyle.css">
+  <link rel="stylesheet" href="/dead-down/prism.css">
+</head>
+
+<body>
+  <div id="content"></div>
+  <script src="/dead-down/prism.js"></script>
+  <script src="/dead-down/marked.min.js"></script>
+  <script type="module">
+
+    marked.setOptions({
+      highlight: (code, lang) => {
+        if (Prism.languages[lang]) {
+          return Prism.highlight(code, Prism.languages[lang], lang)
+        } else {
+          return code
+        }
+      }
+    })
+
+    try { // without try/catch, a thrown except from fetch exits our 'thread'
+      let resp = await fetch('readme.md')
+      let md = await resp.text()
+      document.getElementById('content').innerHTML =
+        marked.parse(md)
+    } catch (error) {
+      console.error('fetch fail', error)
+    }
+
+  </script>
+</body>
+
+</html>
