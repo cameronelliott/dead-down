@@ -40,6 +40,25 @@
     //     }
     //   }
     // })
+    marked.setOptions({
+      anchors: true
+    })
+
+    const renderer = {
+      heading(text, level) {
+        const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+
+        return `
+            <h${level}>
+              <a name="${escapedText}" class="anchor" href="#${escapedText}" aria-hidden="true">
+                <span class="octicon octicon-link"></span>
+              </a>
+              ${text}
+            </h${level}>`;
+      }
+    };
+
+    marked.use({ renderer });
 
     try { // without try/catch, a thrown except from fetch exits our 'thread'
       let resp = await fetch('readme.md')
