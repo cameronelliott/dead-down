@@ -37,3 +37,9 @@ Clone as regular git repo
 git clone http://github.com/cameronelliott/dead-down
 ```
 
+## Updating PrismJS
+
+The following URL is used to download Prism .js and .css files:
+```
+https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+bash+go+json&plugins=show-language+toolbar+copy-to-clipboard
+```
