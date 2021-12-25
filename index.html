@@ -14,24 +14,27 @@
   <script src="/dead-down/marked.min.js"></script>
   <script type="module">
 
-    marked.setOptions({
-      highlight: (code, lang) => {
-        if (Prism.languages[lang]) {
-          return Prism.highlight(code, Prism.languages[lang], lang)
-        } else {
-          return code
-        }
-      }
-    })
+    // marked.setOptions({
+    //   highlight: (code, lang) => {
+    //     if (Prism.languages[lang]) {
+    //       console.log(111)
+    //       return Prism.highlight(code, Prism.languages[lang], lang)
+    //     } else {
+    //       console.log(333)
+    //       return code
+    //     }
+    //   }
+    // })
 
     try { // without try/catch, a thrown except from fetch exits our 'thread'
       let resp = await fetch('readme.md')
       let md = await resp.text()
-      document.getElementById('content').innerHTML =
-        marked.parse(md)
+      document.getElementById('content').innerHTML = marked.parse(md)
     } catch (error) {
       console.error('fetch fail', error)
     }
+
+    Prism.highlightAll()
 
   </script>
 </body>
