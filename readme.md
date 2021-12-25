@@ -39,7 +39,5 @@ git clone http://github.com/cameronelliott/dead-down
 
 ## Updating PrismJS
 
-The following URL is used to download Prism .js and .css files:
-```
-https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+bash+go+json&plugins=show-language+toolbar+copy-to-clipboard
-```
+If you open up the file prism.js, the first line shows the url which
+was used to download the .js and .css files.
