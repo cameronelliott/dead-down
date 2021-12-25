@@ -10,7 +10,6 @@ Dead-simple page-load-time Markdown to HTML website creation tool. Uses MarkedJS
 
 - [Another Example](#another-example)
 - [Basic Directions](#basic-directions)
-  - [Methods to get these files into `./dead-down/*`](#methods-to-get-these-files-into-dead-down)
 - [Updating PrismJS](#updating-prismjs)
 
 ## Another Example
@@ -28,22 +27,24 @@ Can be found [here](example1/index.html)
 7. The command is `ln -s dead-down/index.html foo/index.html`
 8. Edit the content to get it to where you need `foo/readme.md` 
 
-### Methods to get these files into `./dead-down/*`
-1. Unzip these files into `dead-down`
-2. Add this repo as a git submodule under `dead-down`
-3. Clone this repo as a regular git repo under `dead-down`
+<!-- omit in toc -->
+### Download or clone this repo into folder: dead-down
+- Option A: Untar these files into `dead-down`
+- Option B: Add this repo as a git submodule under `dead-down`
+- Option C: Clone this repo as a regular git repo under `dead-down`
 
-Get a zip, and unzip it.
+Option A: Get a tar, and untar it.
 ```bash
-curl http://github.com/cameronelliott/dead-down | unzip -v
+curl  https://github.com/cameronelliott/dead-down/archive/refs/heads/main.tar.gz -sL | tar xvz
+mv dead-down-main dead-down
 ```
 
-Add as a submodule if you like that way
+Option B: Add as a submodule inside of an existing git repository.
 ```bash
 git submodule add http://github.com/cameronelliott/dead-down
 ```
 
-Clone as regular git repo
+Option C: Clone as regular git repo
 ```bash
 git clone http://github.com/cameronelliott/dead-down
 ```
