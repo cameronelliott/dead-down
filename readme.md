@@ -1,6 +1,17 @@
-# dead-down
+
+<!-- omit in toc -->
+# dead-down 
+
 
 Dead-simple page-load-time Markdown to HTML website creation tool. Uses MarkedJS, and PrismJS
+
+<!-- omit in toc -->
+## Table of Contents
+
+- [Another Example](#another-example)
+- [Basic Directions](#basic-directions)
+  - [Methods to get these files into `./dead-down/*`](#methods-to-get-these-files-into-dead-down)
+- [Updating PrismJS](#updating-prismjs)
 
 ## Another Example
 
