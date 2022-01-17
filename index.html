@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <title>Marked in the browser</title>
   <link rel="stylesheet" href="/dead-down/github-markdown.css">
+  <link rel="stylesheet" href="https://files.stork-search.net/basic.css" />
   <style>
     body {
       box-sizing: border-box;
@@ -20,10 +21,131 @@
       }
     }
   </style>
+  <!-- search popup 
+    https://www.w3schools.com/howto/howto_css_fullscreen_search.asp
+  -->
+  <style>
+    /* body {
+      font-family: Arial;
+    } */
+
+    /* * {
+      box-sizing: border-box;
+    } */
+
+    .openBtn {
+      background: #f1f1f1;
+      border: none;
+      padding: 10px 15px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .openBtn:hover {
+      background: #bbb;
+    }
+
+    .overlay {
+      height: 100%;
+      width: 100%;
+      display: none;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .overlay-content {
+      position: relative;
+      top: 46%;
+      width: 80%;
+      text-align: center;
+      margin-top: 30px;
+      margin: auto;
+    }
+
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .overlay .closebtn:hover {
+      color: #ccc;
+    }
+
+    .overlay input[type=text] {
+      padding: 15px;
+      font-size: 17px;
+      border: none;
+      float: left;
+      width: 80%;
+      background: white;
+    }
+
+    .overlay input[type=text]:hover {
+      background: #f1f1f1;
+    }
+
+    .overlay button {
+      float: left;
+      width: 20%;
+      padding: 15px;
+      background: #ddd;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .overlay button:hover {
+      background: #bbb;
+    }
+  </style>
   <link rel="stylesheet" href="/dead-down/prism.css">
 </head>
 
 <body>
+
+  <div id="myOverlay" class="overlay">
+    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+    <div class="overlay-content">
+      <div class="stork-wrapper">
+        <input data-stork="federalist" class="stork-input" />
+        <div data-stork="federalist-output" class="stork-output"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Fullscreen Search</h2>
+  <p>Click on the button to open the search box.</p>
+  <button class="openBtn" onclick="openSearch()">Open Search Box</button>
+
+  <script>
+    function openSearch() {
+      document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function closeSearch() {
+      document.getElementById("myOverlay").style.display = "none";
+    }
+  </script>
+
+
+
+
+
+  <script src="https://files.stork-search.net/stork.js"></script>
+  <script>
+    stork.register('federalist',
+      'https://files.stork-search.net/federalist.st'
+    )
+  </script>
+
   <div id="content" class="markdown-body"></div>
   <script src="/dead-down/prism.js"></script>
   <script src="/dead-down/marked.min.js"></script>
