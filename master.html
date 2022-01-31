@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Marked in the browser</title>
+  <style>
+    body {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 0 10px;
+    /* font: 18px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: #444 */
+}
+  </style>
+  <link rel="stylesheet" href="/dead-down/github-markdown.css">
+  <link rel="stylesheet" href="/dead-down/prism.css">
+</head>
+
+<body>
+  <div id="content" class="markdown-body">
+    {{.}}
+  </div>
+  <script src="/dead-down/prism.js"></script>
+  <script type="module">
+    Prism.highlightAll()
+  </script>
+</body>
+
+</html>
