@@ -1,0 +1,27 @@
+
+Github CSS from either
+https://github.com/sindresorhus/github-markdown-css
+https://github.com/cameronelliott/github-markdown-css
+
+Note, the sindresorhus repo shows the <link> before the <style> block,
+now sure of the total impact of reversing, but it seems to make a difference.
+So, get the <link> before the <style>
+
+This <style> block is also from the sindresorhus repo for github markdown.
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+  
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+  </style>
+
+
